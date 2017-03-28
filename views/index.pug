@@ -1,0 +1,39 @@
+doctype html
+html
+head
+  title=title
+  script(src='/scripts/main.js')
+body
+  h2 Enter The Origin Coordinates
+  form(action='' method='POST')
+    label(for='x') X:
+    input(type='text' id='x' name="x")
+    label(for='y') Y:
+    input(type='text' id='x' name='y')
+    button(type='submit') Submit
+  section(id='sortedList')
+    h3 User Intput(x,y)
+    p #{userInput}
+    h3 Sorted List:
+    //- p #{sortedList}
+    script  
+      alert("hello")
+    
+    if sortedList
+      table 
+        thead
+          tr
+            th ID
+            th Coordinates
+            th Distance
+        tbody
+          each item in JSON.parse(sortedList)
+            tr 
+              td #{item.id}
+              td #{item.value}
+              td #{item.distance}
+            
+          //- td item.id
+          //- td item.value
+          //- td item.distance
+    
